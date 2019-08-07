@@ -1,0 +1,108 @@
+aanis@LAPTOP-TQVR5AMN MINGW64 ~
+$ pwd                                                                       //pwd is a working directory
+/c/Users/aanis
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~
+$ git --version
+git version 2.22.0.windows.1
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~
+$ git config --global user.name "anusha-hub"
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~
+$ git config --global user.email "anusha.sekha@gmail.com"
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~
+$ git clone  https://github.com/anusha-hub/repo_dev.git
+fatal: destination path 'repo_dev' already exists and is not an empty directory.
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~
+$ ls -ld repo_dev/
+drwxr-xr-x 1 aanis 197609 0 Aug  7 13:02 repo_dev//                          //to check its downloaded or not, yes its downloaded
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~
+$ ls-lrta repo_dev/
+bash: ls-lrta: command not found                                             //slash shoouldnt be given, so wrong command
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~
+$ ls -lrta repo_dev                                                          //to check the repository
+total 25
+-rw-r--r-- 1 aanis 197609 28 Aug  7 12:13 README.md
+drwxr-xr-x 1 aanis 197609  0 Aug  7 12:22 .git/
+drwxr-xr-x 1 aanis 197609  0 Aug  7 12:50 repo_dev/
+drwxr-xr-x 1 aanis 197609  0 Aug  7 12:54 file1/
+drwxr-xr-x 1 aanis 197609  0 Aug  7 12:55 repo_1/
+drwxr-xr-x 1 aanis 197609  0 Aug  7 13:02 ./
+drwxr-xr-x 1 aanis 197609  0 Aug  7 13:50 ../
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~
+$ pwd                                                        
+/c/Users/aanis
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~
+$ ls -ld repo_dev
+drwxr-xr-x 1 aanis 197609 0 Aug  7 13:02 repo_dev/
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~
+$ ls -lrta repo_dev
+total 25
+-rw-r--r-- 1 aanis 197609 28 Aug  7 12:13 README.md
+drwxr-xr-x 1 aanis 197609  0 Aug  7 12:22 .git/
+drwxr-xr-x 1 aanis 197609  0 Aug  7 12:50 repo_dev/
+drwxr-xr-x 1 aanis 197609  0 Aug  7 12:54 file1/
+drwxr-xr-x 1 aanis 197609  0 Aug  7 12:55 repo_1/
+drwxr-xr-x 1 aanis 197609  0 Aug  7 13:02 ./
+drwxr-xr-x 1 aanis 197609  0 Aug  7 13:50 ../
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~                                            //navigated to repository
+$ cd repo_dev/
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~/repo_dev (master)
+$ ls -lrta
+total 25
+-rw-r--r-- 1 aanis 197609 28 Aug  7 12:13 README.md
+drwxr-xr-x 1 aanis 197609  0 Aug  7 12:22 .git/
+drwxr-xr-x 1 aanis 197609  0 Aug  7 12:50 repo_dev/
+drwxr-xr-x 1 aanis 197609  0 Aug  7 12:54 file1/
+drwxr-xr-x 1 aanis 197609  0 Aug  7 12:55 repo_1/
+drwxr-xr-x 1 aanis 197609  0 Aug  7 13:02 ./
+drwxr-xr-x 1 aanis 197609  0 Aug  7 13:50 ../
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~/repo_dev (master)                        //status means to check where you are?  in master branch
+$ git status                                                                 on master branch if any changes are required.but now master branch is up to date
+On branch master                                                           ...   which branch is a local master branches....
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~/repo_dev (master)                            // but online repository bough lot of changes, want to see the changes i.e., check list of branches
+$ git branch -r                                                                       from the command prompt or terminal
+  origin/HEAD -> origin/master                 //head is a pointer or a label to the most recent commit of the branch ur currently on
+  origin/master                               //master is a default branch created when you initialize a git repository
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~/repo_dev (master)                             // we were also created many other branches, if we want to synch those changes
+$ git fetch                                                                        Fetch: this command will help us to track changes and the downloading
+remote: Enumerating objects: 7, done.                                             ....So git fetches is from remote repository to local...
+remote: Counting objects: 100% (7/7), done.                                              To download online information from the repository
+remote: Compressing objects: 100% (4/4), done.                                    
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+From https://github.com/anusha-hub/repo_dev
+ * [new branch]      developer-1 -> origin/developer-1
+ * [new branch]      developer-2 -> origin/developer-2                        // these changes were not available on local repository
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~/repo_dev (master)
+$ git pull                                                                     // whatever things were added            
+                                                                                  pull is going to download the information like file, or any content
+Already up to date.
+                                                                                   after pull we can see master and remaining branches
+aanis@LAPTOP-TQVR5AMN MINGW64 ~/repo_dev (master)                                 //to check the remote branches informations
+$ git branch -r
+  origin/HEAD -> origin/master                                                     // For example to check the local branches the command is   git branch
+  origin/developer-1                                                           
+  origin/developer-2
+  origin/master
+
+aanis@LAPTOP-TQVR5AMN MINGW64 ~/repo_dev (master)
+$
